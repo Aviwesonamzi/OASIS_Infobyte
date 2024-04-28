@@ -1,18 +1,41 @@
-# asking for input from the users  
-the_height = float(input("Enter the height in cm: "))  
-the_weight = float(input("Enter the weight in kg: "))  
-
-BMI=the_weight/(the_height*the_height)
-print("BMI Calculated is:  ",BMI)
+from pywebio.input import *
+from pywebio.output import *
  
-# printing the BMI  
-print("Your Body Mass Index is", BMI)  
-# using the if-elif-else conditions  
-if BMI <= 18.5:  
-    print("You are underweight.")  
-elif BMI <= 24.9:  
-    print("You are healthy.")  
-elif BMI <= 29.9:  
-    the_print("You are over weight.")  
-else:  
-    print("You are obese.")
+# classify person
+class calculation:
+
+    def BMIcalculator(Height, Mass):
+ 
+        for t1, t2 in [(16, 'severely underweight'),
+                       (18.5, 'underweight'),
+                       (25, 'normal'),
+                       (30, 'overweight'),
+                       (35, 'moderately obese'),
+                       (float('inf'), 'severely obese')]:
+            if BMI <= t1:
+                put_text('Your BMI is', BMI, 'and the person is :', t2)
+                break
+ 
+class calculation:
+ 
+    def BMIcalculator(self, Height, Mass):
+ 
+        BMI = (Mass)/(Height*Height)
+ 
+        for t1, t2 in [(16, 'severely underweight'),
+                       (18.5, 'underweight'),
+                       (25, 'normal'), (30, 'overweight'),
+                       (35, 'moderately obese'),
+                       (float('inf'), 'severely obese')]:
+ 
+            if BMI <= t1:
+                put_text('Your BMI is', BMI, 'and you are :', t2)
+                break
+ 
+ 
+Height = input("Please enter height in meters(m)", type=FLOAT)
+ 
+Mass = input("Please enter Mass/Weight in Kilograms(Kg)", type=FLOAT)
+ 
+obj = calculation()
+obj.BMIcalculator(Height, Mass)
