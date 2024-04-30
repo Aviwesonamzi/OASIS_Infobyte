@@ -1,1 +1,2 @@
-This is all about creating an voice assistance
+python programming projects 
+
